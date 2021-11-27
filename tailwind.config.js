@@ -19,6 +19,11 @@ module.exports = {
       gray: colors.gray,
       white: colors.white,
       black: colors.black
+    },
+    extend: {
+      fontFamily: {
+        dm: ["'DM Mono', monospace"]
+      }
     }
   },
   variants: {

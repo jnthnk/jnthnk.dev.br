@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 const Welcome: FC<WelcomeProps> = ({}) => {
   return (
-    <header className='relative flex items-center justify-center py-8 bg-black text-white sm:min-h-screen bg-gray-900'>
+    <header className='relative flex items-center justify-center py-8 bg-gray-900 text-white sm:min-h-screen'>
       <Container className='text-center'>
         <Title size='medium' className='mb-6'>
           Jonathan Kim - Front-End Developer
