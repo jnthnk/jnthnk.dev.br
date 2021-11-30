@@ -7,7 +7,7 @@ const Title: FC<TitleProps> = ({
   className
 }) => (
   <Tag
-    className={`block${
+    className={`font-medium block${
       size === 'small'
         ? ' text-xl'
         : size === 'medium'

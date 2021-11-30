@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from '@/components/Layout'
 import Welcome from '@/components/Welcome'
-import getI18nByLang from '@/utils/getI18nByLang'
+import i18ns from '@/constants/i18ns'
 import type { FC } from 'react'
 import type { GetStaticProps } from 'next'
 import type { PageContextProps } from '@/contexts/PageContext'
@@ -20,7 +20,7 @@ const BlogPage: FC<PageContextProps> = ({ i18n, lang, name }) => {
 const getStaticProps: GetStaticProps = ({ locale: lang }) => {
   return {
     props: {
-      i18n: getI18nByLang(lang),
+      i18n: i18ns[lang],
       lang,
       name: 'blog'
     }

@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import type { i18nProps } from '@/utils/getI18nByLang'
+import type { i18nProps } from '@/constants/i18ns'
 
 const PageContext = createContext<PageContextProps>(null)
 

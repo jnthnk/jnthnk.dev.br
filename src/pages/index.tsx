@@ -5,7 +5,7 @@ import Experience from '@/components/Experience'
 import Portfolio from '@/components/Portfolio'
 import Articles from '@/components/Articles'
 import Biography from '@/components/Biography'
-import getI18nByLang from '@/utils/getI18nByLang'
+import i18ns from '@/constants/i18ns'
 import type { FC } from 'react'
 import type { GetStaticProps } from 'next'
 import type { PageContextProps } from '@/contexts/PageContext'
@@ -28,7 +28,7 @@ const HomePage: FC<PageContextProps> = ({ i18n, lang, name }) => {
 const getStaticProps: GetStaticProps = ({ locale: lang }) => {
   return {
     props: {
-      i18n: getI18nByLang(lang),
+      i18n: i18ns[lang],
       lang,
       name: 'home'
     }
