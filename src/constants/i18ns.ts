@@ -3,7 +3,9 @@ import type { PageLang } from '@/contexts/PageContext'
 const i18ns: { [key in PageLang]: i18nProps } = {
   pt: {
     head: {
-      title: 'Bem-vindo'
+      title: 'Bem-vindo',
+      description: '',
+      keywords: ''
     },
     header: {
       items: [
@@ -28,18 +30,27 @@ const i18ns: { [key in PageLang]: i18nProps } = {
         }
       ]
     },
+    welcome: {
+      slug: 'bem-vindo',
+      title: 'Jonathan Kim - UX Specialist',
+      excerpt:
+        'Sou um desenvolvedor focado em criar interfaces de usuário elegantes, performáticas e intuitivas usando as mais modernas tecnologías web e mobile.'
+    },
     experience: {
       slug: 'experiencia',
-      title: 'Experiencia em linguagens'
+      title: 'Experiência'
     },
     portfolio: {
       slug: 'projetos',
-      title: 'Ptojetos e trabalhos concluidos'
+      title: 'Projetos e trabalhos concluidos',
+      excerpt: ''
     }
   },
   es: {
     head: {
-      title: 'Bienvenido'
+      title: 'Bienvenido',
+      description: '',
+      keywords: ''
     },
     header: {
       items: [
@@ -64,18 +75,27 @@ const i18ns: { [key in PageLang]: i18nProps } = {
         }
       ]
     },
+    welcome: {
+      slug: 'bem-vindo',
+      title: 'Jonathan Kim - Desenvolvedor Front-End',
+      excerpt:
+        'Sou um desenvolvedor focado em criar interfaces de usuário elegantes, performáticas e intuitivas usando as mais modernas tecnologías web e mobile.'
+    },
     experience: {
       slug: 'experiencia',
       title: 'Experiencia em linguagens'
     },
     portfolio: {
       slug: 'projetos',
-      title: 'Ptojetos e trabalhos concluidos'
+      title: 'Ptojetos e trabalhos concluidos',
+      excerpt: ''
     }
   },
   en: {
     head: {
-      title: 'Welcome'
+      title: 'Welcome',
+      description: '',
+      keywords: ''
     },
     header: {
       items: [
@@ -100,13 +120,20 @@ const i18ns: { [key in PageLang]: i18nProps } = {
         }
       ]
     },
+    welcome: {
+      slug: 'bem-vindo',
+      title: 'Jonathan Kim - UX Especialist',
+      excerpt:
+        'Sou um desenvolvedor front-end focado em criar interfaces de usuário elegantes, performáticas e intuitivas usando as mais modernas tecnologías web e mobile.'
+    },
     experience: {
       slug: 'experience',
       title: 'Experiencia em linguagens'
     },
     portfolio: {
       slug: 'projetos',
-      title: 'Ptojetos e trabalhos concluidos'
+      title: 'Ptojetos e trabalhos concluidos',
+      excerpt: ''
     }
   }
 }
@@ -114,9 +141,20 @@ const i18ns: { [key in PageLang]: i18nProps } = {
 type i18nProps = {
   head: {
     title: string
+    description: string
+    keywords: string
   }
   header: {
-    items: { slug: string; label: string; abbr?: string }[]
+    items: {
+      slug: string
+      label: string
+      abbr?: string
+    }[]
+  }
+  welcome: {
+    slug: string
+    title: string
+    excerpt: string
   }
   experience: {
     slug: string
@@ -125,6 +163,7 @@ type i18nProps = {
   portfolio: {
     slug: string
     title: string
+    excerpt: string
   }
 }
 

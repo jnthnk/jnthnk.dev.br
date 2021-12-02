@@ -1,42 +1,36 @@
-import Head from 'next/head'
+import { useState, useEffect } from 'react'
+import Head from '@/components/Head'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Network from '@/components/Network'
 import PageContext from '@/contexts/PageContext'
 import type { FC } from 'react'
 import type { PageContextProps } from '@/contexts/PageContext'
 
 const Layout: FC<LayoutProps> = ({ i18n, lang, name, children }) => {
+  const [scroll, scrollUpdate] = useState(false)
+  useEffect(() => {
+    const windowOnScroll = () => {
+      const { scrollY } = window
+      scrollUpdate(scrollY ? true : false)
+    }
+    window.addEventListener('scroll', windowOnScroll)
+    return () => {
+      window.removeEventListener('scroll', windowOnScroll)
+    }
+  }, [])
   return (
     <PageContext.Provider value={{ i18n, lang, name }}>
-      <Head>
-        <style>{`
-        @font-face {
-          font-family: 'DM Mono';
-          font-weight: 300;
-          font-display: swap;
-          src: local('DM Mono Light'), url('fonts/DMMono-Light.woff2') format('woff2'), url('fonts/DMMono-Light.ttf') format('truetype');
-          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        @font-face {
-          font-family: 'DM Mono';
-          font-weight: 300;
-          font-style: italic;
-          font-display: swap;
-          src: local('DM Mono Light'), local('DM Mono Light Italic'), url('fonts/DMMono-LightItalic.woff2') format('woff2'), url('fonts/DMMono-LightItalic.ttf') format('truetype');
-          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        @font-face {
-          font-family: 'DM Mono';
-          font-weight: 500;
-          font-display: swap;
-          src: local('DM Mono Medium'), url('fonts/DMMono-Medium.woff2') format('woff2'), url('fonts/DMMono-Medium.ttf') format('truetype');
-          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        `}</style>
-      </Head>
+      <Head />
       <Header />
-      <main className='relative overflow-hidden z-10'>{children}</main>
+      <main
+        className={`relative overflow-hidden z-10 md:pl-[18rem] xl:pl-[20rem] pr-[calc(4rem-2px)]`}
+      >
+        {children}
+      </main>
       <Footer />
+      <Network />
+      <span className='hidden fixed z-20 inset-0 pointer-events-none border-2 border-gray-500 rounded-lg md:block' />
     </PageContext.Provider>
   )
 }

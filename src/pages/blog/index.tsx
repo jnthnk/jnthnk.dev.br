@@ -9,9 +9,6 @@ import type { PageContextProps } from '@/contexts/PageContext'
 const BlogPage: FC<PageContextProps> = ({ i18n, lang, name }) => {
   return (
     <Layout i18n={i18n} lang={lang} name={name}>
-      <Head>
-        <title>{i18n.head.title}</title>
-      </Head>
       <Welcome />
     </Layout>
   )

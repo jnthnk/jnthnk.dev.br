@@ -3,12 +3,14 @@ import usePageContext from '@/hooks/usePageContext'
 import type { FC } from 'react'
 
 const Header: FC = () => {
-  const { i18n } = usePageContext()
+  const {
+    i18n: { header: i18n }
+  } = usePageContext()
   return (
-    <header className='absolute overflow-hidden z-20 inset-0 top-auto text-white'>
-      <Container tag='nav' className='!py-12'>
-        <ul className='flex justify-center -my-2 -mx-8 uppercase tracking-widest leading-4'>
-          {i18n.header.items.map(({ abbr, slug, label }) => (
+    <header className='fixed overflow-auto z-20 inset-0 right-auto border-2 border-gray-500 rounded-tl-lg rounded-bl-lg md:w-72 xl:w-80'>
+      <Container>
+        <ul className=''>
+          {i18n.items.map(({ abbr, slug, label }) => (
             <li key={slug} className='block py-2 px-8'>
               <a className='block p-1 -m-1' href={`#${slug}`}>
                 {abbr || label}

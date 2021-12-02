@@ -20,6 +20,7 @@
       "@/constants/*": ["src/constants/*"],
       "@/contexts/*": ["src/contexts/*"],
       "@/public/*": ["public/*"],
+      "@/styles/*": ["src/styles/*"],
       "@/hooks/*": ["src/hooks/*"],
       "@/pages/*": ["src/pages/*"],
       "@/utils/*": ["src/utils/*"]

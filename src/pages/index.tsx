@@ -1,10 +1,6 @@
-import Head from 'next/head'
 import Layout from '@/components/Layout'
 import Welcome from '@/components/Welcome'
 import Experience from '@/components/Experience'
-import Portfolio from '@/components/Portfolio'
-import Articles from '@/components/Articles'
-import Biography from '@/components/Biography'
 import i18ns from '@/constants/i18ns'
 import type { FC } from 'react'
 import type { GetStaticProps } from 'next'
@@ -13,14 +9,8 @@ import type { PageContextProps } from '@/contexts/PageContext'
 const HomePage: FC<PageContextProps> = ({ i18n, lang, name }) => {
   return (
     <Layout i18n={i18n} lang={lang} name={name}>
-      <Head>
-        <title>{i18n.head.title}</title>
-      </Head>
       <Welcome />
       <Experience />
-      <Portfolio />
-      <Articles />
-      <Biography />
     </Layout>
   )
 }

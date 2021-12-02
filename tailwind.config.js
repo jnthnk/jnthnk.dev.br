@@ -14,7 +14,7 @@ module.exports = {
       '2xl': '1400px'
     },
     colors: {
-      primary: colors.emerald,
+      primary: colors.red,
       secondary: colors.fuchsia,
       gray: colors.gray,
       white: colors.white,
