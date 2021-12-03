@@ -7,12 +7,12 @@ const Portfolio = () => {
     i18n: { portfolio: i18n }
   } = usePageContext()
   return (
-    <section id={i18n.slug}>
-      <Container>
-        <Title>{i18n.title}</Title>
-        <p>{i18n.excerpt}</p>
-      </Container>
-    </section>
+    <Container id={i18n.slug} tag='section'>
+      <Title tag='h2' hasColon>
+        {i18n.title}
+      </Title>
+      <p>{i18n.excerpt}</p>
+    </Container>
   )
 }
 

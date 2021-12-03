@@ -30,7 +30,7 @@ const Layout: FC<LayoutProps> = ({ i18n, lang, name, children }) => {
       </main>
       <Footer />
       <Network />
-      <span className='hidden fixed z-20 inset-0 pointer-events-none border-2 border-gray-500 rounded-lg md:block' />
+      <span className='hidden fixed z-20 inset-0 pointer-events-none border-2 border-gray-500 md:block' />
     </PageContext.Provider>
   )
 }

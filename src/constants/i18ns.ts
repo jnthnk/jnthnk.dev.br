@@ -42,7 +42,7 @@ const i18ns: { [key in PageLang]: i18nProps } = {
     },
     portfolio: {
       slug: 'projetos',
-      title: 'Projetos e trabalhos concluidos',
+      title: 'Projetos',
       excerpt: ''
     }
   },

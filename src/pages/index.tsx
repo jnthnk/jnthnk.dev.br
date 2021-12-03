@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout'
 import Welcome from '@/components/Welcome'
 import Experience from '@/components/Experience'
+import Portfolio from '@/components/Portfolio'
 import i18ns from '@/constants/i18ns'
 import type { FC } from 'react'
 import type { GetStaticProps } from 'next'
@@ -11,6 +12,7 @@ const HomePage: FC<PageContextProps> = ({ i18n, lang, name }) => {
     <Layout i18n={i18n} lang={lang} name={name}>
       <Welcome />
       <Experience />
+      <Portfolio />
     </Layout>
   )
 }
