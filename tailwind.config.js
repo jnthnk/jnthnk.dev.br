@@ -1,9 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
-  darkMode: false,
+  content: [],
   theme: {
     screens: {
       xs: '400px',
@@ -19,15 +17,7 @@ module.exports = {
       gray: colors.gray,
       white: colors.white,
       black: colors.black
-    },
-    extend: {
-      fontFamily: {
-        dm: ["'DM Mono', monospace"]
-      }
     }
-  },
-  variants: {
-    extend: {}
   },
   plugins: []
 }
