@@ -24,7 +24,7 @@ const Layout: FC<LayoutProps> = ({ head, i18n, lang, name, children }) => {
     <PageContext.Provider value={{ i18n, lang, name }}>
       <Head {...head} />
       <Header />
-      <main className={`relative z-10 overflow-hidden md:pl-64 xl:pl-72`}>
+      <main className={`relative z-10 overflow-hidden pt-16 md:pt-0 md:pl-64 xl:pl-72`}>
         {children}
         <Network />
       </main>

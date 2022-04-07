@@ -1,14 +1,13 @@
 import Title from '@/components/Title'
 import usePageContext from '@/hooks/usePageContext'
+import type { FC } from 'react'
 
-const Experience = () => {
-  const {
-    i18n: { experience: i18n }
-  } = usePageContext()
+const Experience: FC<ExperienceProps> = ({ slug, title }) => {
+  const {} = usePageContext()
   return (
-    <section id={i18n.slug} className='p-12 md:p-14 xl:p-16 border-b'>
+    <section id={slug} className='border-b p-12 md:p-14 xl:p-16'>
       <Title hasColon tag='h2' className='mb-8'>
-        {i18n.title}
+        {title}
       </Title>
       <p className='text-xl'>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora ea ex in ab ipsam, placeat
@@ -16,6 +15,12 @@ const Experience = () => {
       </p>
     </section>
   )
+}
+
+type ExperienceProps = {
+  slug: string
+  title: string
+  children?: undefined
 }
 
 export default Experience

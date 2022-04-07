@@ -27,7 +27,7 @@ const Header: FC<HeaderProps> = () => {
   )
   return (
     <header className='fixed inset-0 bottom-auto z-20 flex justify-center overflow-auto border-2 border-gray-500 uppercase md:right-auto md:bottom-0 md:w-64 md:flex-col xl:w-72'>
-      <Container className='w-full'>
+      <Container className='w-full px-8 py-6'>
         <ul className='flex items-end gap-8 font-bold leading-4 tracking-wider md:flex-col'>
           {links.map(({ abbr, slug, label }) => (
             <li key={slug} className='block'>
@@ -36,14 +36,6 @@ const Header: FC<HeaderProps> = () => {
               </a>
             </li>
           ))}
-        </ul>
-        <ul className='flex items-end leading-4'>
-          <li className='block'>
-            <a className='block'>Es</a>
-          </li>
-          <li className='block'>
-            <a className='block'>Pt</a>
-          </li>
         </ul>
       </Container>
     </header>
