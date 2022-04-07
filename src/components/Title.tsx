@@ -2,7 +2,7 @@ import type { FC } from 'react'
 
 const Title: FC<TitleProps> = ({
   tag: Tag = 'h1' as keyof JSX.IntrinsicElements,
-  size = 'large',
+  size = 'medium',
   children,
   hasColon,
   className

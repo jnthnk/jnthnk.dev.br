@@ -27,15 +27,12 @@ const links: LinkProps[] = [
 
 const Network: FC = () => {
   return (
-    <div className='fixed overflow-auto inset-0 left-auto z-30 flex flex-col justify-between w-16 border-2 border-gray-500'>
-      <div className=''>
-        <Icon name='world' className='w-10 h-10 flex-shrink-0 mr-4 ml-[3px]' />
-      </div>
-      <ul className='relative overflow-hidden flex flex-col'>
+    <div className='fixed inset-0 left-auto z-30 flex w-16 flex-col justify-between overflow-auto'>
+      <ul className='relative flex flex-col overflow-hidden'>
         {links.map(({ href, name, label }) => (
           <li key={name} className='block'>
             <a href={href} className='flex items-center p-2'>
-              <Icon name={name} className='w-10 h-10 flex-shrink-0 mr-4 ml-[3px]' />
+              <Icon name={name} className='mr-4 ml-[3px] h-10 w-10 flex-shrink-0' />
               {label}
             </a>
           </li>

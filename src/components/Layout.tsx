@@ -5,9 +5,10 @@ import Footer from '@/components/Footer'
 import Network from '@/components/Network'
 import PageContext from '@/contexts/PageContext'
 import type { FC } from 'react'
+import type { HeadProps } from '@/components/Head'
 import type { PageContextProps } from '@/contexts/PageContext'
 
-const Layout: FC<LayoutProps> = ({ i18n, lang, name, children }) => {
+const Layout: FC<LayoutProps> = ({ head, i18n, lang, name, children }) => {
   const [scroll, scrollUpdate] = useState(false)
   useEffect(() => {
     const windowOnScroll = () => {
@@ -21,21 +22,20 @@ const Layout: FC<LayoutProps> = ({ i18n, lang, name, children }) => {
   }, [])
   return (
     <PageContext.Provider value={{ i18n, lang, name }}>
-      <Head />
+      <Head {...head} />
       <Header />
-      <main
-        className={`relative overflow-hidden z-10 md:pl-[18rem] xl:pl-[20rem] pr-[calc(4rem-2px)]`}
-      >
+      <main className={`relative z-10 overflow-hidden md:pl-64 xl:pl-72`}>
         {children}
+        <Network />
       </main>
       <Footer />
-      <Network />
-      <span className='hidden fixed z-20 inset-0 pointer-events-none border-2 border-gray-500 md:block' />
+      <span className='pointer-events-none fixed inset-0 block border-2 border-gray-500' />
     </PageContext.Provider>
   )
 }
 
 type LayoutProps = PageContextProps & {
+  head: HeadProps
   children: JSX.Element | JSX.Element[]
 }
 

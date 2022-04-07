@@ -1,26 +1,58 @@
+import { useMemo } from 'react'
 import Container from '@/components/Container'
 import usePageContext from '@/hooks/usePageContext'
 import type { FC } from 'react'
 
-const Header: FC = () => {
-  const {
-    i18n: { header: i18n }
-  } = usePageContext()
+const Header: FC<HeaderProps> = () => {
+  const { i18n } = usePageContext()
+  const links = useMemo(
+    () => [
+      {
+        abbr: i18n.bio,
+        slug: 'bio',
+        label: i18n.biography
+      },
+      {
+        abbr: i18n.experience,
+        slug: 'exp',
+        label: i18n.experience
+      },
+      {
+        abbr: i18n.projects,
+        slug: 'pro',
+        label: i18n.projects
+      }
+    ],
+    [i18n]
+  )
   return (
-    <header className='flex flex-col justify-center fixed overflow-auto z-20 inset-0 right-auto ha border-2 border-gray-500 md:w-72 xl:w-80'>
+    <header className='fixed inset-0 bottom-auto z-20 flex justify-center overflow-auto border-2 border-gray-500 uppercase md:right-auto md:bottom-0 md:w-64 md:flex-col xl:w-72'>
       <Container className='w-full'>
-        <ul className='flex flex-col -m-2'>
-          {i18n.items.map(({ abbr, slug, label }) => (
-            <li key={slug} className='block p-2'>
-              <a className='block p-1 -m-1' href={`#${slug}`}>
+        <ul className='flex items-end gap-8 font-bold leading-4 tracking-wider md:flex-col'>
+          {links.map(({ abbr, slug, label }) => (
+            <li key={slug} className='block'>
+              <a className='-m-1 block p-1' href={`#${slug}`}>
                 {abbr || label}
               </a>
             </li>
           ))}
+        </ul>
+        <ul className='flex items-end leading-4'>
+          <li className='block'>
+            <a className='block'>Es</a>
+          </li>
+          <li className='block'>
+            <a className='block'>Pt</a>
+          </li>
         </ul>
       </Container>
     </header>
   )
 }
 
+type HeaderProps = {
+  children?: undefined
+}
+
 export default Header
+export type { HeaderProps }

@@ -1,25 +1,30 @@
 import Container from '@/components/Container'
 import Title from '@/components/Title'
-import usePageContext from '@/hooks/usePageContext'
 import type { FC } from 'react'
 
-const Welcome: FC = () => {
-  const {
-    i18n: { welcome: i18n }
-  } = usePageContext()
+const Welcome: FC<WelcomeProps> = ({ slug, titles, description }) => {
   return (
     <header
-      id={i18n.slug}
-      className='relative flex items-center py-4 border-b-2 border-gray-500 md:min-h-screen md:py-0'
+      id={slug}
+      className='relative flex items-center border-b-2 border-gray-500 py-4 md:min-h-screen md:py-0 md:pl-8'
     >
       <Container>
-        <Title size='medium' className='mb-6'>
-          {i18n.title}
+        <Title size='large' className='mb-8'>
+          {titles[0]}
+          <span className='mt-2 block'>{titles[1]}</span>
         </Title>
-        <p className='text-lg'>{i18n.excerpt}</p>
+        <p className='text-lg'>{description}</p>
       </Container>
     </header>
   )
 }
 
+type WelcomeProps = {
+  slug: string
+  titles: [string, string]
+  children?: undefined
+  description: string
+}
+
 export default Welcome
+export type { WelcomeProps }
