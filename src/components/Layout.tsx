@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Head from '@/components/Head'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Network from '@/components/Network'
 import PageContext from '@/contexts/PageContext'
 import type { FC } from 'react'
 import type { HeadProps } from '@/components/Head'
@@ -24,9 +23,8 @@ const Layout: FC<LayoutProps> = ({ head, i18n, lang, name, children }) => {
     <PageContext.Provider value={{ i18n, lang, name }}>
       <Head {...head} />
       <Header />
-      <main className={`relative z-10 overflow-hidden pt-16 md:pt-0 md:pl-64 xl:pl-72`}>
+      <main className={`relative z-10 overflow-hidden pt-24 md:pt-0 md:pl-56 xl:pl-64`}>
         {children}
-        <Network />
       </main>
       <Footer />
       <span className='pointer-events-none fixed inset-0 block border-2 border-gray-500' />

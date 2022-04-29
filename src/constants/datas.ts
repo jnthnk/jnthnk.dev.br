@@ -10,9 +10,14 @@ const datas: { [key in PageContextProps['lang']]: dataProps } = {
         keywords: ''
       },
       welcome: {
-        slug: '',
-        titles: ['Jonathan Kim', 'Full-Stack Developer'],
+        slug: 'bem-vindo',
+        titles: ['Jonathan Kim', 'Full-React Developer'],
         description: `I'm a programmer that develop fluid user-interfaces for web, mobile and desktop using the best on react ecosystem.`
+      },
+      experience: {
+        slug: 'experience',
+        title: 'Experience',
+        descriptions: [`I'm in love with chocolate`]
       }
     }
   },
@@ -23,7 +28,8 @@ const datas: { [key in PageContextProps['lang']]: dataProps } = {
         description: '',
         keywords: ''
       },
-      welcome: null
+      welcome: null,
+      experience: null
     }
   },
   pt: {
@@ -33,7 +39,8 @@ const datas: { [key in PageContextProps['lang']]: dataProps } = {
         description: '',
         keywords: ''
       },
-      welcome: null
+      welcome: null,
+      experience: null
     }
   }
 }

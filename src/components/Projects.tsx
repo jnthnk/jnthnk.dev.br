@@ -6,7 +6,7 @@ import type { FC } from 'react'
 
 const techs = ['JavaScript / TypeScript', 'HTML / Pug', 'CSS / Sass', 'React']
 
-const Experience: FC<ExperienceProps> = ({ slug, title, descriptions }) => {
+const Projects: FC<ProjectsProps> = ({ slug, title, descriptions }) => {
   return (
     <section
       id={slug}
@@ -22,12 +22,12 @@ const Experience: FC<ExperienceProps> = ({ slug, title, descriptions }) => {
   )
 }
 
-type ExperienceProps = {
+type ProjectsProps = {
   slug: string
   title: string
   descriptions: string[]
   children?: undefined
 }
 
-export default Experience
-export type { ExperienceProps }
+export default Projects
+export type { ProjectsProps }

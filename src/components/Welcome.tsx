@@ -7,12 +7,12 @@ const Welcome: FC<WelcomeProps> = ({ slug, titles, description }) => {
   return (
     <header
       id={slug}
-      className='relative flex items-center border-b-2 border-gray-500 py-4 md:min-h-screen md:py-0 md:pr-16 lg:pl-4 xl:pl-8'
+      className='relative flex items-center border-b-2 border-gray-500 py-4 md:min-h-screen md:py-0 md:pl-4 xl:pr-16 xl:pl-8'
     >
-      <Container>
-        <Title size='large' className='mb-8 lg:-ml-4 xl:-ml-8'>
+      <Container className='w-full'>
+        <Title size='large' className='mb-4 md:mb-8 md:-ml-4 xl:-ml-8'>
           {titles[0]}
-          <span className='mt-4 block lg:ml-2 xl:ml-4'>{titles[1]}</span>
+          <span className='mt-2 block md:mt-4 md:ml-2 xl:ml-4'>{titles[1]}</span>
         </Title>
         <p className='text-lg'>{description}</p>
         <Button href='/hello'>More about me</Button>

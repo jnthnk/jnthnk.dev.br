@@ -7,7 +7,7 @@ const Container: FC<ContainerProps> = ({
   className
 }) => {
   return (
-    <Tag id={id} className={`p-8 md:p-12 xl:p-16${className ? ` ${className}` : ''}`}>
+    <Tag id={id} className={`p-8 md:p-12 xl:p-16 ${className}`}>
       {children}
     </Tag>
   )
@@ -15,7 +15,7 @@ const Container: FC<ContainerProps> = ({
 
 type ContainerProps = {
   id?: string
-  tag?: 'div' | 'nav' | 'article' | 'section' | 'summary' | 'blockquote'
+  tag?: 'div' | 'nav' | 'article' | 'section' | 'header' | 'summary' | 'blockquote'
   children: JSX.Element | JSX.Element[]
   className?: string
 }
